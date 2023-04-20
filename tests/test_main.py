@@ -8,5 +8,6 @@ from random import randint
 
 class Test(TestCase):
 
-    def test_is_odd_str(self):
+    def test_dice_sim(self):
         assert type(randint(1, 6)) is int
+        assert randint(1, 8) != 10
