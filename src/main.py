@@ -1,17 +1,14 @@
 """
-odd/even number checker
-Author: Wolf Paulus (https://wolfpaulus.com)
+random number generator
+Author: Charles Spencer
 """
 
-
-def is_odd(num: int) -> bool:
-    """Return True if num is odd, False otherwise."""
-    return num % 2 == 1
+from random import randint
 
 
-def is_odd_str(num: str) -> str:
+def num_str(top: int) -> str:
     """Return a string indicating whether num is odd or even."""
-    if num.isnumeric():
-        return f"{num} is {'odd' if is_odd(int(num)) else 'even'}."
+    if top.isnumeric():
+        return f"Your number is {randint(1, int(top))}."
     else:
         return "Please enter a number."
