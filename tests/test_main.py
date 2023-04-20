@@ -10,4 +10,4 @@ class Test(TestCase):
 
     def test_dice_sim(self):
         assert type(randint(1, 6)) is int
-        assert randint(1, 8) != 10
+        assert randint(1, 8) != 100
