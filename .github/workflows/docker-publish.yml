@@ -38,7 +38,7 @@ jobs:
         with:
           registry: ${{ env.REGISTRY }}
           username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          password: ${{ secrets.TOKEN }}
       - name: Build the docker Docker image / test run it / publish the image
         run: |
           docker build . --tag ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
