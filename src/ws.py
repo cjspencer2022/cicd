@@ -4,7 +4,7 @@ Author: Wolf Paulus (https://wolfpaulus.com)
 """
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from time import asctime
-from random import randint
+from main import num_str
 
 hostName = "0.0.0.0"
 serverPort = 8080
@@ -17,7 +17,7 @@ class MyServer(BaseHTTPRequestHandler):
         elif self.path == "/" or self.path.startswith("/?number="):
             status = 200
             number = self.path.split("=")[1] if self.path.startswith("/?number=") else ""
-            result = f"Your number is {randint(1, int(number))}." if number.isnumeric() else ""
+            result = num_str(number)
             with open('./src/response.html', 'r') as f:
                 # read the html template and fill in the parameters: path, time and result
                 content = f.read().format(path=self.path, time=asctime(), result=result)
