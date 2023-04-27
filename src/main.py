@@ -12,4 +12,4 @@ def num_str(top: str) -> str:
         top = int(top)
         return f"Your number is {randint(1, top)}."
     except ValueError:
-        return "Please enter a number."
+        return "Please enter a whole number."
